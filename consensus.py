@@ -38,10 +38,10 @@ def count():
 
 matrix, consensus_index = count(), []
 for x in range(0, length):
-    ATCG = []
+    ACGT = []
     for letter in ('A', 'C', 'G', 'T'):
-        ATCG.append(matrix[letter][x])
-    consensus_index.append(ATCG.index(max(ATCG)))
+        ACGT.append(matrix[letter][x])
+    consensus_index.append(ACGT.index(max(ACGT)))
 
 
 con_dict = {0: 'A', 1: 'C', 2: 'G', 3: 'T'}
