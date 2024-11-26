@@ -4,11 +4,9 @@ import re
 
 with open((os.path.expanduser('~/Desktop/rosalind_mprt.txt')), 'r') as f:
     uniprot = [x.rstrip('\n') for x in f]
+    sequences = [requests.get('https://rest.uniprot.org/uniprotkb/' + x[:6] + '.fasta').text.split('\n') for x in uniprot]
 
-sequences = []
-for x in uniprot:
-    sequences.append(requests.get('https://rest.uniprot.org/uniprotkb/' + x[:6] + '.fasta').text.split('\n'))
-
+#parse FASTA files
 my_dict = {}
 label = None
 for fasta in sequences:
