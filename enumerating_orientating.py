@@ -1,6 +1,6 @@
 import itertools
 
-n = 5
+n = int(input('Enter N: '))
 
 
 def get_numbers(n):
